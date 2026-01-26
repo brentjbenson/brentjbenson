@@ -144,6 +144,17 @@
       font-weight:600;
     }
 
+    .logo-row {
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:1.5rem;
+    }
+    .rf-logo {
+      max-width:160px;
+      height:auto;
+      opacity:0.9;
+    }
+
     @media(max-width:768px){
       .two-column{
         grid-template-columns:1fr;
@@ -155,6 +166,9 @@
       }
       .nav ul{
         flex-wrap:wrap;
+        justify-content:flex-start;
+      }
+      .logo-row{
         justify-content:flex-start;
       }
     }
@@ -182,7 +196,12 @@
     there, plus how I would build a focused top‑10 account plan.
   </p>
 
-    <!-- Section 1: Problems / impact / causes -->
+  <div class="logo-row">
+    <!-- update src to your actual logo file path -->
+    <img src="images/recorded-future-logo.jpeg" alt="Recorded Future logo" class="rf-logo">
+  </div>
+
+  <!-- Section 1: Problems / impact / causes -->
   <section>
     <div class="kicker">Problems, impact, causes</div>
     <h2 class="section-title">How Recorded Future maps to customer gaps</h2>
@@ -206,10 +225,10 @@
           <tr>
             <td>Analysts spend excessive time (for example 10–20 hours per week per analyst) manually enriching alerts and doing basic threat research.</td>
             <td>
-              Teams burn 100+ hours per week on low-level work, equating to roughly 2–3 FTEs and about 290K USD per year in productivity cost at typical analyst rates. 
+              Teams burn 100+ hours per week on low-level work, equating to roughly 2–3 FTEs and about 290K USD per year in productivity cost at typical analyst rates.
             </td>
             <td>
-              No unified intelligence graph or automation, reliance on siloed feeds, web searches, and manual pivoting between tools for IP, domain, and malware context. 
+              No unified intelligence graph or automation, reliance on siloed feeds, web searches, and manual pivoting between tools for IP, domain, and malware context.
             </td>
           </tr>
           <tr>
