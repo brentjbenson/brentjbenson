@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recorded Future | Brent Benson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --blueprint:#005a9c;
+      --graphite:#2d2d2d;
+      --paper:#f5f5f0;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--paper);
+      color:var(--graphite);
+      line-height:1.6;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+    .nav{
+      max-width:1024px;
+      margin:0 auto;
+      padding:0.75rem 1.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-weight:700;
+      letter-spacing:0.08em;
+      font-size:0.9rem;
+      text-transform:uppercase;
+      padding:0.25rem 0.5rem;
+      border:1px solid var(--graphite);
+    }
+    .nav ul{
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      font-size:0.9rem;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--graphite);
+      padding:0.25rem 0.5rem;
+      border-radius:999px;
+      transition:background 0.15s ease,color 0.15s ease;
+    }
+    .nav a:hover{
+      background:var(--blueprint);
+      color:#fff;
+    }
+
+    main{
+      max-width:1024px;
+      margin:0 auto;
+      padding:2rem 1.5rem 3rem;
+    }
+
+    .kicker{
+      font-size:0.78rem;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:#777;
+      margin-bottom:0.9rem;
+    }
+    h1{
+      font-size:1.9rem;
+      margin-bottom:0.5rem;
+    }
+    .intro{
+      max-width:640px;
+      font-size:0.98rem;
+      margin-bottom:2rem;
+    }
+
+    .section-title{
+      font-size:1.4rem;
+      margin-bottom:0.4rem;
+    }
+
+    .two-column{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+      gap:2rem;
+      align-items:flex-start;
+      margin-bottom:2.5rem;
+    }
+    .card-list{
+      display:grid;
+      gap:1rem;
+    }
+    .card{
+      background:#fff;
+      border-radius:0.85rem;
+      padding:1rem 1.1rem;
+      border:1px solid rgba(0,0,0,0.06);
+    }
+    .pill{
+      display:inline-flex;
+      font-size:0.7rem;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      padding:0.15rem 0.6rem;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.16);
+      margin-bottom:0.35rem;
+      color:#555;
+    }
+    .card h2{
+      font-size:1.05rem;
+      margin-bottom:0.25rem;
+    }
+    .card h3{
+      font-size:1.02rem;
+      margin-bottom:0.25rem;
+    }
+    .meta{
+      font-size:0.8rem;
+      color:#777;
+      margin-top:0.35rem;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:0.9rem;
+    }
+    table th, table td{
+      border:1px solid rgba(0,0,0,0.1);
+      padding:0.6rem 0.6rem;
+      vertical-align:top;
+      text-align:left;
+    }
+    table th{
+      background:#f0f0f0;
+      font-weight:600;
+    }
+
+    @media(max-width:768px){
+      .two-column{
+        grid-template-columns:1fr;
+      }
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0.5rem;
+      }
+      .nav ul{
+        flex-wrap:wrap;
+        justify-content:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="logo">BB</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="life.html">Life</a></li>
+      <li><a href="notes.html">Notes</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="kicker">Target company</div>
+  <h1>Recorded Future: Gap view of the territory</h1>
+  <p class="intro">
+    This page shows how I think about Recorded Future and a Minnesota/Iowa territory through a Gap Selling lens:
+    the problems security teams face, the business impact of those problems, and the root causes that keep them
+    there, plus how I would build a focused top‑10 account plan.
+  </p>
+
+  <!-- Section 1: Problems / impact / causes -->
+  <section>
+    <div class="kicker">Problems, impact, causes</div>
+    <h2 class="section-title">How Recorded Future helps security teams</h2>
+    <p class="intro">
+      Threat intelligence only matters if it changes outcomes. Here is how I map Recorded Future to common
+      problems in the kinds of enterprises I’d target in Minnesota and Iowa.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security teams drown in noisy alerts and low‑value IOCs.</td>
+            <td>
+              Analysts waste hours triaging alerts that do not matter, which slows response to real attacks
+              and drives burnout on the team. [web:156][web:160]
+            </td>
+            <td>
+              Tools generate lots of raw signals with little context, and intelligence is not integrated into
+              SIEM/SOAR to automate enrichment and scoring. [web:156][web:163]
+            </td>
+          </tr>
+          <tr>
+            <td>Leadership cannot clearly see cyber risk in business terms.</td>
+            <td>
+              Hard to justify spend or prioritize projects, so critical gaps stay open and the org stays reactive
+              instead of proactive. [web:157][web:166]
+            </td>
+            <td>
+              Threat data lives in silos, reports are manual, and there is no shared view that connects threat
+              activity to assets, brands, and key business services. [web:157][web:160]
+            </td>
+          </tr>
+          <tr>
+            <td>Slow, manual investigations during incidents.</td>
+            <td>
+              Longer dwell time and higher breach costs because analysts must pivot across many tools to
+              understand indicators, actors, and related campaigns. [web:156][web:160]
+            </td>
+            <td>
+              No centralized threat intelligence layer, limited historical context, and little automation in
+              how intel feeds IR workflows. [web:160][web:163]
+            </td>
+          </tr>
+          <tr>
+            <td>Limited visibility into dark web and third‑party risk.</td>
+            <td>
+              Missed early warning signs of credential leaks, brand abuse, or partner compromise that lead to
+              fraud, ransomware, or data loss. [web:157][web:160][web:177]
+            </td>
+            <td>
+              Monitoring focuses on internal logs only, with little coverage of dark web, paste sites, and
+              third‑party risk indicators. [web:157][web:160]
+            </td>
+          </tr>
+          <tr>
+            <td>Vulnerability management is driven by CVSS scores only.</td>
+            <td>
+              Patch teams work on the wrong things first, leaving exploitable issues exposed while time is
+              spent on low‑risk vulnerabilities. [web:156][web:160]
+            </td>
+            <td>
+              No threat‑driven prioritization that considers exploitation in the wild, related threat actors,
+              and asset criticality. [web:160][web:177]
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2: Territory strategy -->
+  <section>
+    <div class="kicker">Territory</div>
+    <h2 class="section-title">How I’d approach Minnesota & Iowa</h2>
+    <div class="two-column">
+      <div>
+        <p>
+          Minnesota and Iowa have a strong mix of Fortune‑1000‑scale organizations across healthcare, financial
+          services, utilities, manufacturing, and retail. In Minnesota alone there are more than a dozen Fortune
+          500 and additional Fortune 1000 headquarters, including large retailers, banks, food companies, and
+          utilities. [web:172][web:175]
+        </p>
+        <p style="margin-top:0.75rem;">
+          My first step would be to segment the territory into a focused list of 10 anchor accounts that match
+          Recorded Future’s sweet spot: complex attack surface, brand and third‑party risk, and existing
+          investments in SIEM, EDR, and SOAR where intelligence can plug in quickly.
+        </p>
+      </div>
+      <div class="card-list">
+        <article class="card">
+          <div class="pill">Segmentation</div>
+          <h3>Pick the right 10 anchors</h3>
+          <p>
+            Start with Fortune‑500/1000 headquarters in Minnesota and Iowa in sectors like healthcare, finance,
+            utilities, manufacturing, and retail, then filter for size of digital footprint and regulatory pressure.
+          </p>
+        </article>
+        <article class="card">
+          <div class="pill">Signals</div>
+          <h3>Use public signals as clues</h3>
+          <p>
+            Look at open roles (SOC, IR, TI), tech mentions in job posts, recent incidents in their sector, and
+            current partners to infer maturity and urgency, then pair that with RF intelligence. [web:162][web:165][web:168]
+          </p>
+        </article>
+        <article class="card">
+          <div class="pill">Motion</div>
+          <h3>Run a focused, problem‑led motion</h3>
+          <p>
+            For each anchor account, lead with a specific problem and impact story tied to their industry and
+            recent threat activity, not a generic threat intelligence pitch.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Account research framework -->
+  <section>
+    <div class="kicker">Account research</div>
+    <h2 class="section-title">How I’d build a 10‑account plan</h2>
+    <p class="intro">
+      Rather than start with a product slide, I start with a structured view of each account. In practice this
+      lives in a spreadsheet or CRM, but this table shows the types of fields I track for a top‑10 list.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Account (example)</th>
+            <th>Industry / HQ</th>
+            <th>Signals I’d look for</th>
+            <th>Recorded Future problem to test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Large MN healthcare system</td>
+            <td>Healthcare · Minnesota</td>
+            <td>
+              Recent healthcare breaches in the region and sector, hiring for SOC/IR roles, and job posts mentioning
+              EHR platforms, cloud providers, SIEM, and EDR tools. [web:162][web:165]
+            </td>
+            <td>
+              Overloaded SOC with alert noise and limited visibility into dark web activity around patient data
+              and third‑party vendors, leading to higher breach risk and response time.
+            </td>
+          </tr>
+          <tr>
+            <td>Regional financial services HQ</td>
+            <td>Banking / insurance · Minnesota</td>
+            <td>
+              Open roles for TI analysts, fraud and cyber teams, mentions of cloud migrations and digital banking
+              initiatives, and regulatory filings that highlight cyber risk.
+            </td>
+            <td>
+              Need for real‑time external intelligence on credential leaks, brand abuse, and fraud infrastructure
+              to reduce losses and support regulatory expectations.
+            </td>
+          </tr>
+          <tr>
+            <td>Midwest manufacturing leader</td>
+            <td>Manufacturing · Minnesota or Iowa</td>
+            <td>
+              News about ransomware in their sector, OT/IT convergence projects, and job posts pointing to
+              industrial control system security and new SIEM/EDR deployments. [web:168]
+            </td>
+            <td>
+              Protecting plants and suppliers from ransomware and data theft using external intelligence on
+              attacker infrastructure and third‑party risk.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem;">
+      In my own planning, I’d build this out for 10 specific Minnesota and Iowa Fortune‑1000‑scale accounts, then
+      map MEDDPICC fields on top of it: metrics, economic buyer, champions, and decision process for each logo.
+    </p>
+  </section>
+</main>
+</body>
+</html>
