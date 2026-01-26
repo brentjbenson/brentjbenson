@@ -144,15 +144,26 @@
       font-weight:600;
     }
 
-    .logo-row {
+    .title-row {
       display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1.5rem;
+      margin-bottom:2rem;
+    }
+    .title-text {
+      flex:1.4;
+    }
+    .title-logo {
+      flex:0.8;
+      display:flex;
+      align-items:flex-start;
       justify-content:flex-end;
-      margin-bottom:1.5rem;
     }
     .rf-logo {
-      max-width:160px;
+      max-width:220px;
       height:auto;
-      opacity:0.9;
+      opacity:0.95;
     }
 
     @media(max-width:768px){
@@ -168,8 +179,15 @@
         flex-wrap:wrap;
         justify-content:flex-start;
       }
-      .logo-row{
+      .title-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .title-logo{
         justify-content:flex-start;
+      }
+      .rf-logo{
+        max-width:200px;
       }
     }
   </style>
@@ -189,16 +207,20 @@
 
 <main>
   <div class="kicker">Target company</div>
-  <h1>Recorded Future: Gap view of the territory</h1>
-  <p class="intro">
-    This page shows how I think about Recorded Future and a Minnesota/Iowa territory through a Gap Selling lens:
-    the problems security teams face, the business impact of those problems, and the root causes that keep them
-    there, plus how I would build a focused top‑50 account plan.
-  </p>
 
-  <div class="logo-row">
-    <!-- update src to your actual logo file path -->
-    <img src="images/recorded-future-logo.png" alt="Recorded Future logo" class="rf-logo">
+  <div class="title-row">
+    <div class="title-text">
+      <h1>Recorded Future: Gap view of the territory</h1>
+      <p class="intro">
+        This page shows how I think about Recorded Future and a Minnesota/Iowa territory through a Gap Selling lens:
+        the problems security teams face, the business impact of those problems, and the root causes that keep them
+        there, plus how I would build a focused top‑10 account plan.
+      </p>
+    </div>
+    <div class="title-logo">
+      <!-- update src to your actual logo file path -->
+      <img src="images/recorded-future-logo.png" alt="Recorded Future logo" class="rf-logo">
+    </div>
   </div>
 
   <!-- Section 1: Problems / impact / causes -->
