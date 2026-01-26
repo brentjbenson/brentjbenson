@@ -83,7 +83,31 @@
     .hero-block.large {
       grid-column:span 2;
       grid-row:span 2;
+      display:grid;
+      grid-template-columns:minmax(0, 1.4fr) minmax(0, 1fr);
+      gap:1.25rem;
+      align-items:center;
     }
+    .hero-text {
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:0.75rem;
+    }
+    .hero-photo-wrapper {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .hero-photo {
+      width:100%;
+      max-width:260px;
+      border-radius:999px;
+      border:3px solid rgba(0,0,0,0.06);
+      object-fit:cover;
+      box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    }
+
     .hero-block h1 {
       font-size:clamp(2.2rem,3vw,2.7rem);
       margin-bottom:0.3rem;
@@ -131,7 +155,18 @@
       letter-spacing:0.16em;
       color:#777;
       margin-bottom:0.3rem;
+      display:flex;
+      align-items:center;
+      gap:0.35rem;
     }
+
+    .label-icon {
+      width:18px;
+      height:18px;
+      object-fit:contain;
+      opacity:0.9;
+    }
+
     .metric-label { font-size:0.8rem; color:#777; }
     .metric-value { font-size:0.95rem; font-weight:600; color:var(--blueprint); }
 
@@ -150,6 +185,11 @@
       .hero-block.large {
         grid-column:span 1;
         grid-row:span 1;
+        grid-template-columns:1fr;
+      }
+      .hero-photo-wrapper {
+        order:-1;
+        margin-bottom:0.75rem;
       }
       .nav {
         flex-direction:column;
@@ -178,30 +218,41 @@
 
 <main>
   <section class="hero">
-    <!-- Large identity block -->
+    <!-- Large identity block with hero photo -->
     <article class="hero-block large">
-      <div>
-        <div class="label">Builder & Explorer</div>
-        <h1>Brent Benson</h1>
-        <p>
-          Enterprise Account Executive in cybersecurity, focused on building revenue engines that actually move
-          the business. I use a builder’s mindset and an explorer’s curiosity to understand the real problem,
-          the impact if nothing changes, and the root causes we need to address.
-        </p>
-        <p style="font-size:0.9rem; margin-top:0.6rem;">
-          That means fewer generic pitches and more honest conversations about where a security program is
-          today, where it needs to go, and what has to change in between—for the customer and for their business.
-        </p>
-        <div class="tag-row">
-          <span class="tag">Cybersecurity Sales</span>
-          <span class="tag">MDR & Identity</span>
-          <span class="tag">Human‑first</span>
-          <span class="tag">Business outcomes</span>
+      <div class="hero-text">
+        <div>
+          <div class="label">
+            <img src="images/icon-explorer.svg" alt="" class="label-icon">
+            Builder & Explorer
+          </div>
+          <h1>Brent Benson</h1>
+          <p>
+            Enterprise Account Executive in cybersecurity, focused on building revenue engines that actually move
+            the business. I use a builder’s mindset and an explorer’s curiosity to understand the real problem,
+            the impact if nothing changes, and the root causes we need to address.
+          </p>
+          <p style="font-size:0.9rem; margin-top:0.6rem;">
+            That means fewer generic pitches and more honest conversations about where a security program is
+            today, where it needs to go, and what has to change in between—for the customer and for their business.
+          </p>
+        </div>
+        <div>
+          <div class="tag-row">
+            <span class="tag">Cybersecurity Sales</span>
+            <span class="tag">MDR & Identity</span>
+            <span class="tag">Human‑first</span>
+            <span class="tag">Business outcomes</span>
+          </div>
+          <div style="margin-top:0.9rem;">
+            <a href="work.html" class="btn btn-primary">View my work</a>
+            <a href="life.html" class="btn">Beyond the resume</a>
+          </div>
         </div>
       </div>
-      <div>
-        <a href="work.html" class="btn btn-primary">View my work</a>
-        <a href="life.html" class="btn">Beyond the resume</a>
+      <div class="hero-photo-wrapper">
+        <!-- Replace with your real photo file -->
+        <img src="images/hero-brent.jpg" alt="Photo of Brent Benson" class="hero-photo">
       </div>
     </article>
 
@@ -215,9 +266,12 @@
       </p>
     </article>
 
-    <!-- Builder card -->
+    <!-- Builder card with icon -->
     <article class="hero-block">
-      <div class="label">Builder</div>
+      <div class="label">
+        <img src="images/icon-builder.svg" alt="" class="label-icon">
+        Builder
+      </div>
       <h2 style="font-size:1.15rem; margin-bottom:0.25rem;">Blueprints & pipelines</h2>
       <p style="font-size:0.9rem;">
         From framing a roof to architecting a new territory, I start with a blueprint and build
@@ -226,20 +280,26 @@
       <a href="work.html" class="btn">See my work approach</a>
     </article>
 
-    <!-- Explorer card -->
+    <!-- Explorer card with icon -->
     <article class="hero-block">
-      <div class="label">Explorer</div>
+      <div class="label">
+        <img src="images/icon-explorer.svg" alt="" class="label-icon">
+        Explorer
+      </div>
       <h2 style="font-size:1.15rem; margin-bottom:0.25rem;">Scouts, trails & kitchens</h2>
       <p style="font-size:0.9rem;">
-        Scoutmaster, hiker, and home‑kitchen experimenter—constantly testing, learning, and
+        Scoutmaster, hiker, and home‑kitchen experimenter, constantly testing, learning, and
         teaching in different environments.
       </p>
       <a href="life.html" class="btn">See life projects</a>
     </article>
 
-    <!-- Creator card -->
+    <!-- Creator card with icon -->
     <article class="hero-block">
-      <div class="label">Creator</div>
+      <div class="label">
+        <img src="images/icon-creator.svg" alt="" class="label-icon">
+        Creator
+      </div>
       <h2 style="font-size:1.15rem; margin-bottom:0.25rem;">Sales decks & narratives</h2>
       <p style="font-size:0.9rem;">
         I enjoy building clear, story‑driven decks and one‑pagers that help security and business leaders
@@ -256,7 +316,7 @@
       <div class="label">Philosophy</div>
       <p style="font-size:1.05rem;">
         I believe great things are built twice: first in the mind, then in the real world. Whether it’s
-        a complex MDR program or a patrol flag, I bring a plan to life—with clarity, curiosity,
+        a complex MDR program or a patrol flag, I bring a plan to life with clarity, curiosity,
         and follow‑through.
       </p>
     </article>
