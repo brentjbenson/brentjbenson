@@ -605,53 +605,107 @@
     </div>
   </section>
 
-  <!-- Section 2: Territory strategy -->
+  <!-- Section 3: Account research framework -->
   <section>
-    <div class="kicker">Territory</div>
-    <h2 class="section-title">How I’d approach MN, WI, ND, and SD for Prophet</h2>
-    <div class="two-column">
-      <div>
-        <p>
-          For Prophet’s Agentic SOC, I would segment Minnesota, Wisconsin, North Dakota, and South Dakota into two parallel motions:
-          a focused list of large enterprises with established SOC teams, and a broader set of smaller organizations that look more
-          like MDR buyers with small or no internal security teams.
-        </p>
-        <p style="margin-top:0.75rem;">
-          To build sustainable pipeline, I would work both tracks at the same time: 10–20 large Fortune‑500/1000‑scale or SOC‑mature
-          organizations, and roughly 40–60 smaller organizations across verticals where an Agentic SOC can compete directly with or
-          replace MDR.
-        </p>
-      </div>
-      <div class="card-list">
-        <article class="card">
-          <div class="pill">Segmentation</div>
-          <h3>Large SOCs and MDR‑style buyers</h3>
-          <p>
-            Identify 10–20 large enterprises in MN, WI, ND, and SD with established SOCs, SIEM and EDR investments, and clear alert
-            fatigue, plus 40–60 smaller organizations with limited security staff or MDR contracts that want better coverage and
-            transparency.
-          </p>
-        </article>
-        <article class="card">
-          <div class="pill">Signals</div>
-          <h3>Two sets of buying signals</h3>
-          <p>
-            For large SOCs, look for SOC and detection engineering roles, SIEM/EDR/ SOAR stacks, and talk of MTTR and tool sprawl.
-            For MDR‑style buyers, look for “security analyst 1 of 1,” MDR/RMM mentions, compliance‑driven security, and leaders worried
-            about coverage without adding headcount.
-          </p>
-        </article>
-        <article class="card">
-          <div class="pill">Motion</div>
-          <h3>Different motions, same outcome</h3>
-          <p>
-            With big SOCs, lead with investigation time, MTTR, SIEM cost, and analyst burnout. With smaller orgs, lead with MDR
-            frustrations, 24x7 coverage, and faster investigations, then show how an Agentic SOC changes both the cost curve and
-            response quality.
-          </p>
-        </article>
-      </div>
+    <div class="kicker">Account research</div>
+    <h2 class="section-title">How I’d build an Agentic SOC account plan</h2>
+    <p class="intro">
+      In this territory I’d maintain two structured lists: 10–20 large SOC‑mature enterprises and 40–60 smaller organizations
+      that resemble MDR buyers. Each account gets a simple profile that ties their environment and signals back to a specific
+      Agentic SOC problem set.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Account (example)</th>
+            <th>Type / HQ</th>
+            <th>Signals I’d look for</th>
+            <th>Agentic SOC problem to test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Large upper‑Midwest healthcare system</td>
+            <td>Large enterprise · Healthcare · MN or WI</td>
+            <td>
+              Dedicated SOC team, SIEM and EDR stack, job posts for SOC, detection engineers, and IR; public discussion of compliance,
+              cyber risk, or recent sector incidents.
+            </td>
+            <td>
+              High alert volume, long investigation times, and SIEM cost in a regulated environment where Prophet can cut MTTR,
+              reduce manual hours, and shrink storage and MDR dependence.
+            </td>
+          </tr>
+          <tr>
+            <td>Regional financial services HQ</td>
+            <td>Large enterprise · Banking / insurance · MN or WI</td>
+            <td>
+              SOC and fraud team roles, references to SOC modernization or MDR partnerships, heavy use of Microsoft or Splunk,
+              and board‑level focus on cyber and fraud risk.
+            </td>
+            <td>
+              Need to handle far more alerts with the same team, reduce false positives, and get transparent AI investigations that
+              stand up to auditors and regulators.
+            </td>
+          </tr>
+          <tr>
+            <td>Manufacturing leader with plants across the upper Midwest</td>
+            <td>Large enterprise · Manufacturing · MN / ND / SD</td>
+            <td>
+              IT/OT environments, job posts linking OT and IT security, SIEM/EDR in plants and corporate, and any history of ransomware
+              or production outages due to cyber issues.
+            </td>
+            <td>
+              Mixed IT/OT alerts overwhelming a small central SOC, where an Agentic SOC can scale investigations without adding many
+              analysts and reduce dwell time on true incidents.
+            </td>
+          </tr>
+          <tr>
+            <td>Regional healthcare provider with small IT team</td>
+            <td>Smaller org · Healthcare · SD or ND</td>
+            <td>
+              One‑to‑few security staff, security responsibilities rolled into broader IT roles, references to MDR or outsourced SOC,
+              and compliance pressure (HIPAA, etc.).
+            </td>
+            <td>
+              Over‑reliance on MDR or basic tools with limited transparency; Prophet can act as an AI SOC analyst that gives 24x7
+              coverage, faster investigations, and clear timelines without hiring a full team.
+            </td>
+          </tr>
+          <tr>
+            <td>Multi‑site retailer or franchise group</td>
+            <td>Smaller org · Retail · MN / WI / ND / SD</td>
+            <td>
+              Central IT with minimal security headcount, cloud and SaaS footprint (POS, e‑commerce, Office 365), and job posts
+              focused on “security‑minded IT generalists.”
+            </td>
+            <td>
+              Alert noise from endpoint, email, and identity tools with no real SOC; Prophet can function as an Agentic SOC layer that
+              triages and investigates alerts so a small team is not overwhelmed.
+            </td>
+          </tr>
+          <tr>
+            <td>Regional professional services or SaaS provider</td>
+            <td>Smaller org · SaaS / services · MN or WI</td>
+            <td>
+              ISO/SOC 2 or similar compliance focus, MDR or MSSP relationships, and CEO/CISO commentary about needing “enterprise‑grade”
+              security on a mid‑market budget.
+            </td>
+            <td>
+              Desire to move beyond basic MDR to something that can investigate every alert and show clear ROI on security spend,
+              without building a full internal SOC.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem;">
+      Operationally, I’d track these profiles in a simple two‑tier view: 10–20 large SOC‑mature logos and 40–60 MDR‑style buyers,
+      each mapped to MEDDPICC fields, current tooling, and the Prophet value story I want to test first.
+    </p>
   </section>
 </main>
 </body>
