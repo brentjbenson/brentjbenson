@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recorded Future | Brent Benson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --blueprint:#005a9c;
+      --graphite:#2d2d2d;
+      --paper:#f5f5f0;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--paper);
+      color:var(--graphite);
+      line-height:1.6;
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#fff;
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+    .nav{
+      max-width:1024px;
+      margin:0 auto;
+      padding:0.75rem 1.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-weight:700;
+      letter-spacing:0.08em;
+      font-size:0.9rem;
+      text-transform:uppercase;
+      padding:0.25rem 0.5rem;
+      border:1px solid var(--graphite);
+    }
+    .nav ul{
+      list-style:none;
+      display:flex;
+      gap:1rem;
+      font-size:0.9rem;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--graphite);
+      padding:0.25rem 0.5rem;
+      border-radius:999px;
+      transition:background 0.15s ease,color 0.15s ease;
+    }
+    .nav a:hover{
+      background:var(--blueprint);
+      color:#fff;
+    }
+
+    main{
+      max-width:1024px;
+      margin:0 auto;
+      padding:2rem 1.5rem 3rem;
+    }
+
+    .kicker{
+      font-size:0.78rem;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:#777;
+      margin-bottom:0.9rem;
+    }
+    h1{
+      font-size:1.9rem;
+      margin-bottom:0.5rem;
+    }
+    .intro{
+      max-width:640px;
+      font-size:0.98rem;
+      margin-bottom:2rem;
+    }
+
+    .section-title{
+      font-size:1.4rem;
+      margin-bottom:0.4rem;
+    }
+
+    .two-column{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+      gap:2rem;
+      align-items:flex-start;
+      margin-bottom:2.5rem;
+    }
+    .card-list{
+      display:grid;
+      gap:1rem;
+    }
+    .card{
+      background:#fff;
+      border-radius:0.85rem;
+      padding:1rem 1.1rem;
+      border:1px solid rgba(0,0,0,0.06);
+    }
+    .pill{
+      display:inline-flex;
+      font-size:0.7rem;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      padding:0.15rem 0.6rem;
+      border-radius:999px;
+      border:1px solid rgba(0,0,0,0.16);
+      margin-bottom:0.35rem;
+      color:#555;
+    }
+    .card h2{
+      font-size:1.05rem;
+      margin-bottom:0.25rem;
+    }
+    .card h3{
+      font-size:1.02rem;
+      margin-bottom:0.25rem;
+    }
+    .meta{
+      font-size:0.8rem;
+      color:#777;
+      margin-top:0.35rem;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:0.9rem;
+    }
+    table th, table td{
+      border:1px solid rgba(0,0,0,0.1);
+      padding:0.6rem 0.6rem;
+      vertical-align:top;
+      text-align:left;
+    }
+    table th{
+      background:#f0f0f0;
+      font-weight:600;
+    }
+
+    .title-row {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:1.5rem;
+      margin-bottom:2rem;
+    }
+    .title-text {
+      flex:1.4;
+    }
+    .title-logo {
+      flex:0.8;
+      display:flex;
+      align-items:flex-start;
+      justify-content:flex-end;
+    }
+    .rf-logo {
+      max-width:220px;
+      height:auto;
+      opacity:0.95;
+    }
+
+    @media(max-width:768px){
+      .two-column{
+        grid-template-columns:1fr;
+      }
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0.5rem;
+      }
+      .nav ul{
+        flex-wrap:wrap;
+        justify-content:flex-start;
+      }
+      .title-row{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .title-logo{
+        justify-content:flex-start;
+      }
+      .rf-logo{
+        max-width:200px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="logo">BB</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="life.html">Life</a></li>
+      <li><a href="notes.html">Notes</a></li>
+      <li><a href="brent-resume.html">Résumé</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="kicker">Target company</div>
+
+  <div class="title-row">
+    <div class="title-text">
+      <h1>Recorded Future: Gap view of the territory</h1>
+      <p class="intro">
+        This page shows how I think about Recorded Future and a Minnesota/Iowa territory through a Gap Selling lens:
+        the problems security teams face, the business impact of those problems, and the root causes that keep them
+        there, plus how I would build a focused top‑50 account plan.
+      </p>
+    </div>
+    <div class="title-logo">
+      <!-- update src to your actual logo file path -->
+      <img src="images/recorded-future-logo.png" alt="Recorded Future logo" class="rf-logo">
+    </div>
+  </div>
+
+  <!-- Section 1: Problems / impact / causes -->
+  <section>
+    <div class="kicker">Problems, impact, causes</div>
+    <h2 class="section-title">How Recorded Future maps to customer gaps</h2>
+    <p class="intro">
+      Recorded Future’s offerings map cleanly into Gap Selling-style problems, impacts, and root causes across SOC efficiency, exposure management,
+      third‑party risk, brand and identity protection, and AI-driven automation.
+    </p>
+
+    <!-- SOC efficiency and alert triage -->
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.5rem;">SOC efficiency and alert triage</h3>
+    <div style="overflow-x:auto; margin-top:0.5rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem (customer)</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Analysts spend excessive time (for example 10–20 hours per week per analyst) manually enriching alerts and doing basic threat research.</td>
+            <td>
+              Teams burn 100+ hours per week on low-level work, equating to roughly 2–3 FTEs and about 290K USD per year in productivity cost at typical analyst rates.
+            </td>
+            <td>
+              No unified intelligence graph or automation, reliance on siloed feeds, web searches, and manual pivoting between tools for IP, domain, and malware context.
+            </td>
+          </tr>
+          <tr>
+            <td>SOC can only review a fraction of daily alerts, leaving a long tail unreviewed.</td>
+            <td>
+              Missed or late detection leads to a significant portion of real threats slipping through or being investigated too late, increasing the likelihood and impact of incidents.
+            </td>
+            <td>
+              SIEM and EDR generate high volumes without risk-based prioritization, and threat intelligence is not integrated or lacks real-time scoring, so analysts guess what matters.
+            </td>
+          </tr>
+          <tr>
+            <td>Investigations and hunting are slow, often 30–50 percent longer than necessary.</td>
+            <td>
+              Incident response efficiency drops by roughly 30–50 percent, extending dwell time and driving higher breach costs for large organizations.
+            </td>
+            <td>
+              No automated correlation across open, dark, and technical sources, and legacy processes treat threat intelligence as static reports instead of an operational data source.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Continuous threat and exposure management -->
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.75rem;">Continuous threat and exposure management</h3>
+    <div style="overflow-x:auto; margin-top:0.5rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security teams have thousands of vulnerabilities and exposures but lack clarity on which small percentage presents real near-term risk.</td>
+            <td>
+              Resources are spread thin and patching efforts are misallocated, leaving high-risk vulnerabilities exposed and increasing breach probability and potential multi-million-dollar incident costs.
+            </td>
+            <td>
+              Vulnerability management programs rely primarily on static CVSS scores and scanner outputs, with little real-time exploit intelligence from threat actors and malware ecosystems.
+            </td>
+          </tr>
+          <tr>
+            <td>Exposure management programs stall because visibility into actual external threats is incomplete and investigations are slow.</td>
+            <td>
+              Organizations see slower investigations and lower team capacity compared to programs that use live intelligence, which delays remediation and executive confidence in continuous threat exposure management.
+            </td>
+            <td>
+              Disconnected tools for asset and exposure views, no consolidated intelligence layer, and limited automation to connect exposures with real-world threat activity.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Third-party / supply chain risk -->
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.75rem;">Third‑party and supply chain risk</h3>
+    <div style="overflow-x:auto; margin-top:0.5rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Third‑party risk teams cannot see emerging cyber events affecting vendors in real time.</td>
+            <td>
+              A large share of companies experience breaches stemming from a third party, and each major vendor-related incident can drive large financial losses and regulatory penalties.
+            </td>
+            <td>
+              Static questionnaires and periodic assessments with limited monitoring of threat intelligence such as dark web leaks, malicious traffic, and exploit chatter tied to specific vendors.
+            </td>
+          </tr>
+          <tr>
+            <td>Vendor assessments take too long and are largely manual.</td>
+            <td>
+              Long onboarding cycles slow business initiatives and partnerships, and teams lose many hours per week on supplier evaluation, creating significant opportunity cost.
+            </td>
+            <td>
+              No automated aggregation and scoring of vendor-related events and exposures, and teams manually search news, feeds, and reports for each third party.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Brand and identity protection -->
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.75rem;">Brand and identity protection</h3>
+    <div style="overflow-x:auto; margin-top:0.5rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brand abuse such as phishing domains, typosquats, and executive impersonation is detected late, often after customers have been targeted.</td>
+            <td>
+              Increased fraud and customer support load, delayed takedowns, more victims, and reputational damage that can affect revenue and customer satisfaction over time.
+            </td>
+            <td>
+              Limited monitoring across dark web, social media, and registries, and manual takedown processes that are siloed from broader threat intelligence work.
+            </td>
+          </tr>
+          <tr>
+            <td>Brand and fraud teams spend many hours manually searching for brand abuse and coordinating takedowns.</td>
+            <td>
+              Many hours per week per analyst are lost on brand abuse mitigation, which reduces capacity for higher-value fraud prevention activities and increases staffing needs.
+            </td>
+            <td>
+              No unified brand intelligence module tying together domain data, social platforms, dark web coverage, and streamlined takedown; tooling is fragmented so work remains manual.
+            </td>
+          </tr>
+          <tr>
+            <td>Credential and identity exposures are discovered only after they are exploited.</td>
+            <td>
+              Increased account takeover, fraud losses, and incident response costs, as compromised accounts trigger business disruption and potential regulatory exposure.
+            </td>
+            <td>
+              Lack of systematic monitoring of identity-related data in underground markets and stealer logs, and heavy reliance on internal detections alone.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- AI, automation, and analyst capacity -->
+    <h3 class="section-title" style="font-size:1.1rem; margin-top:1.75rem;">AI, automation, and analyst capacity</h3>
+    <div style="overflow-x:auto; margin-top:0.5rem;">
+      <table>
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Business impact</th>
+            <th>Likely root causes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Skilled analysts are overloaded, performing work that could be automated or delegated.</td>
+            <td>
+              Security teams lose significant senior-analyst time each week, which slows strategic projects and proactive threat hunting and raises overall staffing costs.
+            </td>
+            <td>
+              Lack of AI- and automation-driven enrichment and triage, and no agentic workflows that shift routine tasks to junior staff while preserving quality of investigation.
+            </td>
+          </tr>
+          <tr>
+            <td>Organizations struggle to operationalize AI safely and effectively in security.</td>
+            <td>
+              Investments in AI fail to deliver expected return, and triage and investigations stay manual or require heavy validation, limiting the value of AI in operations.
+            </td>
+            <td>
+              AI is bolted onto existing tools without access to high-quality contextual intelligence or clear workflows, so it cannot make accurate, reliable decisions on its own.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2: Territory strategy -->
+  <section>
+    <div class="kicker">Territory</div>
+    <h2 class="section-title">How I’d approach Minnesota & Iowa</h2>
+    <div class="two-column">
+      <div>
+        <p>
+          Minnesota and Iowa have a strong mix of Fortune‑1000‑scale organizations across healthcare, financial
+          services, utilities, manufacturing, and retail. In Minnesota alone there are more than a dozen Fortune
+          500 and additional Fortune 1000 headquarters, including large retailers, banks, food companies, and
+          utilities.
+        </p>
+        <p style="margin-top:0.75rem;">
+          My first step would be to segment the territory into a focused list of 50 anchor accounts that match
+          Recorded Future’s sweet spot: complex attack surface, brand and third‑party risk, and existing
+          investments in SIEM, EDR, and SOAR where intelligence can plug in quickly.
+        </p>
+      </div>
+      <div class="card-list">
+        <article class="card">
+          <div class="pill">Segmentation</div>
+          <h3>Pick the right 50 anchors</h3>
+          <p>
+            Start with Fortune‑500/1000 headquarters in Minnesota and Iowa in sectors like healthcare, finance,
+            utilities, manufacturing, and retail, then filter for size of digital footprint and regulatory pressure.
+          </p>
+        </article>
+        <article class="card">
+          <div class="pill">Signals</div>
+          <h3>Use public signals as clues</h3>
+          <p>
+            Look at open roles (SOC, IR, TI), tech mentions in job posts, recent incidents in their sector, and
+            current partners to infer maturity and urgency, then pair that with RF intelligence.
+          </p>
+        </article>
+        <article class="card">
+          <div class="pill">Motion</div>
+          <h3>Run a focused, problem‑led motion</h3>
+          <p>
+            For each anchor account, lead with a specific problem and impact story tied to their industry and
+            recent threat activity, not a generic threat intelligence pitch.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Account research framework -->
+  <section>
+    <div class="kicker">Account research</div>
+    <h2 class="section-title">How I’d build a 50‑account plan</h2>
+    <p class="intro">
+      Rather than start with a product slide, I start with a structured view of each account. In practice this
+      lives in a spreadsheet or CRM, but this table shows the types of fields I track for a top‑50 list.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Account (example)</th>
+            <th>Industry / HQ</th>
+            <th>Signals I’d look for</th>
+            <th>Recorded Future problem to test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Large MN healthcare system</td>
+            <td>Healthcare · Minnesota</td>
+            <td>
+              Recent healthcare breaches in the region and sector, hiring for SOC/IR roles, and job posts mentioning
+              EHR platforms, cloud providers, SIEM, and EDR tools.
+            </td>
+            <td>
+              Overloaded SOC with alert noise and limited visibility into dark web activity around patient data
+              and third‑party vendors, leading to higher breach risk and response time.
+            </td>
+          </tr>
+          <tr>
+            <td>Regional financial services HQ</td>
+            <td>Banking / insurance · Minnesota</td>
+            <td>
+              Open roles for TI analysts, fraud and cyber teams, mentions of cloud migrations and digital banking
+              initiatives, and regulatory filings that highlight cyber risk.
+            </td>
+            <td>
+              Need for real‑time external intelligence on credential leaks, brand abuse, and fraud infrastructure
+              to reduce losses and support regulatory expectations.
+            </td>
+          </tr>
+          <tr>
+            <td>Midwest manufacturing leader</td>
+            <td>Manufacturing · Minnesota or Iowa</td>
+            <td>
+              News about ransomware in their sector, OT/IT convergence projects, and job posts pointing to
+              industrial control system security and new SIEM/EDR deployments.
+            </td>
+            <td>
+              Protecting plants and suppliers from ransomware and data theft using external intelligence on
+              attacker infrastructure and third‑party risk.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:1rem; font-size:0.9rem;">
+      In my own planning, I’d build this out for 50 specific Minnesota and Iowa Fortune‑1000‑scale accounts, then
+      map MEDDPICC fields on top of it: metrics, economic buyer, champions, and decision process for each logo.
+    </p>
+  </section>
+</main>
+</body>
+</html>
